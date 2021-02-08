@@ -1,13 +1,13 @@
 {
-  "name": "tiderjian/think-core",
-  "description": "qscmf think core",
+  "name": "test/think-core",
+  "description": "test qscmf think core",
   "type": "library",
-  "keywords": ["thinkphp", "admin", "grid", "form"],
+  "keywords": ["thinkphp"],
   "license": "MIT",
   "authors": [
     {
-      "name": "tiderjian",
-      "email": "tider_yatsen@hotmail.com"
+      "name": "testqscmf",
+      "email": "344052208@qq.com"
     }
   ],
   "require": {
