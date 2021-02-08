@@ -11,21 +11,23 @@
             <script type="text/javascript" src="{:asset('libs/ossuploader/jquery.ossuploader.js')}"></script>
             <php>
                 $default_opt=array(
-                    'type'=>'image',
-                    'width'=>120,
-                    'height'=>120
+                'type'=>'image',
+                'width'=>120,
+                'height'=>120
                 );
                 if(!$form['options']){
-                    $form['options']=$default_opt;
+                $form['options']=$default_opt;
                 }
                 $form['options']=array_merge($default_opt,$form['options']);
-
                 if($form['value']){
-                    $pictures_json=array();
-                    $pictures_json[]=showFileUrl($form['value']);
-                    $pictures_json=htmlentities(json_encode($pictures_json));
+                $form['value_arr'] = explode(',',$form['value']);
+                $pictures_json=array();
+                foreach($form['value_arr'] as $item){
+                $pictures_json[]=showFileUrl($item);
+                }
+                $pictures_json=htmlentities(json_encode($pictures_json));
                 }else{
-                    $pictures_json='';
+                $pictures_json='';
                 }
             </php>
             <input type="hidden" name="{$form.name}" value="{$form.value}" data-srcjson="{$pictures_json}">
